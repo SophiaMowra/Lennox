@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48605" started-at="2021-04-05T05:39:47Z" finished-at="2021-04-05T05:40:35Z">
+  <suite name="Default suite" duration-ms="47790" started-at="2021-04-05T06:33:21Z" finished-at="2021-04-05T06:34:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48605" started-at="2021-04-05T05:39:47Z" finished-at="2021-04-05T05:40:35Z">
+    <test name="Default test" duration-ms="47790" started-at="2021-04-05T06:33:21Z" finished-at="2021-04-05T06:34:08Z">
       <class name="com.test.ClassAction">
-        <test-method status="PASS" signature="tc1()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="tc1" is-config="true" duration-ms="12209" started-at="2021-04-05T11:09:35Z" finished-at="2021-04-05T11:09:47Z">
+        <test-method status="PASS" signature="tc1()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="tc1" is-config="true" duration-ms="10236" started-at="2021-04-05T12:03:10Z" finished-at="2021-04-05T12:03:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc1 -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="Login" duration-ms="22808" started-at="2021-04-05T11:09:47Z" finished-at="2021-04-05T11:10:10Z">
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="Login" duration-ms="26073" started-at="2021-04-05T12:03:21Z" finished-at="2021-04-05T12:03:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="details()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="details" duration-ms="25789" started-at="2021-04-05T11:10:10Z" depends-on-methods="com.test.ClassAction.Login" finished-at="2021-04-05T11:10:35Z">
+        <test-method status="PASS" signature="details()[pri:0, instance:com.test.ClassAction@77cd7a0]" name="details" duration-ms="21689" started-at="2021-04-05T12:03:47Z" depends-on-methods="com.test.ClassAction.Login" finished-at="2021-04-05T12:04:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- details -->

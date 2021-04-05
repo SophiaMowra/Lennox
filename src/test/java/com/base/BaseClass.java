@@ -18,13 +18,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
  public static  WebDriver driver;
  // To launch driver
  public static WebDriver getDriver() {
+	 
+	 // if we want to run in cross browser means we can use WebDriverManager code and am written in below
 	 // WebDriverManager.chromedriver().setup();
+	 // to launch in chrome browser
 	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\ASUS\\eclipse-workspace\\LennoxTask\\driver\\chromedriver.exe");
 	 
 	 driver=new ChromeDriver();
@@ -47,7 +50,7 @@ public class BaseClass {
 	element.click();
  }
  
-//Method for scrolldown using javascript
+//Method for scrolldown 
  public static void scrolldown(WebElement element) {
 	JavascriptExecutor executor=(JavascriptExecutor)driver;
 	executor.executeScript("arguments[0].scrollIntoView(false)", element);
@@ -59,9 +62,36 @@ public class BaseClass {
 		executor.executeScript("arguments[0].setAttribute('value','"+data+"')", element);
 	 }
  
-// To read the value from excel
+
+//To select by value text
+public static void select(WebElement element,String data) {
+	Select select=new Select(element);
+	select.selectByVisibleText(data);
+}
+
+//Method for wait concept to handle exception
+public static void waitvisibleEle(WebElement ele) {
+	 WebDriverWait w1=new WebDriverWait(driver,60);
+	 w1.until(ExpectedConditions.elementToBeClickable(ele));
+
+}
+
+//method to handle exception
+
+public static void waitUntillClickable( WebElement element) {
+   WebDriverWait wait=new WebDriverWait(driver,90);
+   wait.until(ExpectedConditions.elementToBeClickable(element));
+}
+
+public static void waitTime() throws InterruptedException {
+	Thread.sleep(3000);
+		}
+	
+
+ 
+// To read the value from excel sheet
  public static String readExcel(int row ,int cel) throws IOException {
-	File file = new File("C:\\Users\\ASUS\\eclipse-workspace\\LennoxTask\\Excel\\Updated.xlsx");	
+	File file = new File("C:\\Users\\ASUS\\eclipse-workspace\\LennoxTask\\Excel\\ExcelVlaues.xlsx");	
 	FileInputStream inputStream = new FileInputStream(file);
 	Workbook workbook=new XSSFWorkbook(inputStream);
 	Sheet sheet = workbook.getSheet("Sheet1");
@@ -71,9 +101,9 @@ public class BaseClass {
   return value;
  }
  
-//To write the value in excel
+//To write the value in excel sheet
  public static void writeExcel(int row, int cel, String data) throws IOException {
-	File file = new File("C:\\Users\\ASUS\\eclipse-workspace\\LennoxTask\\Excel\\Updated.xlsx");
+	File file = new File("C:\\Users\\ASUS\\eclipse-workspace\\LennoxTask\\Excel\\ExcelVlaues.xlsx");
 	FileInputStream inputStream = new FileInputStream(file);
 	Workbook workbook=new XSSFWorkbook(inputStream);
 	Sheet sheet = workbook.getSheet("Sheet1");
@@ -83,31 +113,7 @@ public class BaseClass {
 	FileOutputStream outputStream = new FileOutputStream(file);
 	workbook.write(outputStream);
  }
- 
-//To select by value
- public static void select(WebElement element,String data) {
-	Select select=new Select(element);
-	select.selectByVisibleText(data);
- }
- 
- //Methor for wait
- public static void waitvisibleEle(WebElement ele) {
-	 WebDriverWait w1=new WebDriverWait(driver,60);
-	 w1.until(ExpectedConditions.elementToBeClickable(ele));
-
-}
- 
- 
- public static void waitUntillClickable( WebElement element) {
-    WebDriverWait wait=new WebDriverWait(driver,90);
-    wait.until(ExpectedConditions.elementToBeClickable(element));
- }
- 
- public static void waitTime() throws InterruptedException {
-	Thread.sleep(3000);
-		}
-	
-	
+ 	
 	
 
 }

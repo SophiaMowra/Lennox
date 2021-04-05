@@ -46,8 +46,7 @@ public class ClassAction extends BaseClass {
 	@Test(dependsOnMethods = "Login")
 	private void details() throws IOException, InterruptedException {
 		pojo = new LocatorsPojo();
-		//writeExcel(0, 4, "\\src\\test\\resources\\shutterstock_727680178.jpg");
-		writeExcel(0, 4, "\\src\\test\\resources\\DummyData.png");
+		writeExcel(0, 4, "\\src\\test\\resources\\DummyPic.png");
 		enterText(pojo.getFirstName(), readExcel(2, 0));
 		enterText(pojo.getLastName(), readExcel(3, 0));
 		String email = readExcel(4, 0);
